@@ -28,6 +28,7 @@ a {
   padding: 10px;
   display: block;
   margin-top: 10px;
+  transition: 0.3s;
   text-decoration: none;
   border-radius: 20px;
   text-align: center;
@@ -36,18 +37,20 @@ a {
 }
 a:hover {
 background-color:  rgb(0, 111, 48);
+transform: scale(1.05);
 }
 img{
   margin-top: 15px;
-  width: 400px;
-  border-radius: 12spx;
+  margin-bottom: 20px;
+  width: 100%;
+  border-radius: 10px;
 }
 div {
   background-color: white;
   padding: 20px;
   margin: 20px;
   border-radius: 10px;
-  max-width: 500px;
+  max-width: 700px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1) ;
 }
 </style>
@@ -56,21 +59,21 @@ div {
 
 <body>
 
-<div>
+<header>
 <h1>Привет, меня зовут Данила</h1>
-</div>
+</header>
 
-<div>
+<section>
 <h2>Моя цель</h2>
 <p>Я начал учить программирование</p>
 <p>Я хочу сделать это своим первым заработком на фрилансе</p>
 <p>Frontend & Backend are my first steps to DevOps</p>
-</div>
+</section>
 
-<div>
+<footer>
 <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="картинка">
 <a href="https://github.com/vlasyan-code">Мой GitHub</a>
-</div>
+</footer>
 
 </body>
 </html>
