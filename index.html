@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html> 
+
+<head>
+  <title>Моя первая страница</title>
+  
+  <style>body {
+    text-align: center;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: darkblue;
+}
+
+h2 {
+  color: darkgreen;
+}
+
+p {
+  color: #333;
+}
+
+a {
+  color: white;
+  background-color: rgb(0, 255, 110);
+  padding: 10px;
+  display: block;
+  margin-top: 10px;
+  transition: 0.3s;
+  text-decoration: none;
+  border-radius: 20px;
+  text-align: center;
+  width: fit-content;
+  margin: 10px auto;
+}
+a:hover {
+background-color:  rgb(0, 111, 48);
+transform: scale(1.05);
+}
+img{
+  margin-top: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+  border-radius: 10px;
+}
+.container {
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  max-width: 100%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1) ;
+}
+</style>
+
+</head>
+
+<body>
+
+<header class="container">
+<h1>Привет, меня зовут Данила</h1>
+<h2>Как зовут тебя?</h2>
+
+<input type="text" id="nameInput" placeholder="Name">
+<button onclick="greet()">Отправить</button>
+<p id="output"></p>
+</header>
+
+<section class="container">
+  <h2>My Targets</h2>
+<p>Я начал учить программирование</p>
+<p>Я хочу сделать это своим первым заработком на фрилансе</p>
+<p>Frontend & Backend are my first steps to DevOps</p>
+</section>
+
+<section>
+<h2>📝 Мой ToDo список</h2>
+<input type="text" id="taskInput" placeholder="Например: изучить JS">
+<button onclick="addTask()">Добавить</button>
+
+<ul id="taskList"></ul>
+</section>
+
+<footer class="container">
+<img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="картинка">
+
+<button onclick="sayHello()">Нажми меня</button>
+
+<script>
+  function sayHello() {
+    alert("кнопочка тык*");
+  }
+</script>
+
+<button onclick="sayHello2()">а может меня?</button>
+
+<script>
+  function sayHello2() {
+    alert ("а надо было первую нажимать;)");
+  }
+</script>
+
+</footer>
+
+<script>
+  function greet() {
+    let name = document.getElementById("nameInput").value;
+
+    if (name ==="") {
+      document.getElementById("output").innerText = "Ты ничего не ввёл 😅";
+    } else{
+      document.getElementById("output").innerText = `Привет, ${name} 👋`; 
+    }
+  }
+</script>
+
+<script>
+  function addTask() {
+    let input = document.getElementById("taskInput");
+    let taskText = input.value;
+
+    if (taskText === "") {
+      alert("Введите задачу!");
+      return;
+    }
+    // создаём новый элемент списка
+    let li = document.createElement("li");
+    li.innerText = taskText;
+
+    //добавляем в список
+    document.getElementById("taskList").appendChild(li);
+    // очищаем input
+    input.value = "";
+    //удалить задачу
+    li.onclick = function() {
+      li.remove();
+    }
+  }
+</script>
+
+</body>
+</html>
